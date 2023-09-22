@@ -7,7 +7,8 @@
         </div>
         <div class="right-navbar">
           <div class="bag-container">
-            <img :src="require('@/assets/bag.svg')" alt="">
+            <Badge v-if="cartAmount > 0" :cartSize="cartAmount"/>
+            <img @click="addCart" :src="require('@/assets/bag.svg')" alt="">
           </div>
           <p>Produtos</p>
           <p>Ofertas</p>
@@ -41,13 +42,29 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import Badge from '@/components/Badge.vue';
 // @ is an alias to /src
 
 export default {
   name: 'HomeView',
+  components: {
+    Badge
+  },
   data: () => ({
     backgroundImage: require('@/assets/logo.png')
-  })
+  }),
+  computed: {
+    ...mapGetters({
+      cartAmount: 'getCartAmount'
+    })
+  },
+  methods: {
+    addCart() {
+      this.$store.commit('addCartAmount')
+      console.log(this.cartAmount);
+    }
+  }
 }
 </script>
 
