@@ -24,17 +24,17 @@
     <div class="initial-info">
       <div class="initial-info-content">
         <img :src="require('@/assets/startup.png')" alt="">
-        <p>Envio rápido e frete grátis <br>para todo o Brasil!</p>
+        <p>Envio rápido e frete grátis<br>para todo o Brasil!</p>
       </div>
 
       <div class="initial-info-content">
         <img :src="require('@/assets/discount.png')" alt="">
-        <p>Ofertas todos os dias para <br>esquentar seu coração!</p>
+        <p>Ofertas todos os dias para<br>esquentar seu coração!</p>
       </div>
 
       <div class="initial-info-content">
         <img :src="require('@/assets/credit-card.png')" alt="">
-        <p>10% de desconto com pagamento <br>à vista!</p>
+        <p>10% de desconto com<br>pagamento à vista!</p>
       </div>
     </div>
   </div>
@@ -108,7 +108,7 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
 
   .initial-info-content {
