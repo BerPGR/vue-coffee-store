@@ -3,7 +3,7 @@
     <header class="header-container">
       <nav class="navbar">
         <div class="left-navbar">
-          <img :src="backgroundImage" class="navbar-img">
+          <img :src="require('@/assets/logo.png')" class="navbar-img">
         </div>
         <div class="right-navbar">
           <div class="bag-container">
@@ -51,9 +51,6 @@ export default {
   components: {
     Badge
   },
-  data: () => ({
-    backgroundImage: require('@/assets/logo.png')
-  }),
   computed: {
     ...mapGetters({
       cartAmount: 'getCartAmount'
